@@ -32,41 +32,37 @@
         <p>Gracias por explorar nuestra página web, para dejar un comentario por favor completar el siguiente formulario:</p>
      
 
-     <section>
+     <!-- Solo este bloque se centrará -->
+  <div class="centrar-formulario">
+    <form action="procesar_formulario.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
 
+      <label for="personaje">Personaje Favorito</label>
+      <select name="personaje" id="personaje">
+        <option value="tanjiro">Tanjiro</option>
+        <option value="zenitsu">Zenitsu</option>
+        <option value="inosuke">Inosuke</option>
+        <option value="tomioka">Tomioka</option>
+        <option value="shinobu">Shinobu</option>
+        <option value="uzui">Uzui</option>
+        <option value="rengoku">Rengoku</option>
+        <option value="mitsuri">Mitsuri</option>
+        <option value="iguro">Iguro Obanai</option>
+        <option value="sanemi">Sanemi</option>
+        <option value="tokito">Tokito</option>
+        <option value="gyomei">Gyomei</option>
+      </select>
 
-     </section>     
-     
-     <form action="procesar_formulario.php" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-             
-            <label for="perosnaje-favoito">Personaje Favorito</label>
-            <select name="personaje" id="personaje">
-                <option value="tanjiro">Tanjiro</option>
-                <option value="zenitsu">Zenitsu</option>
-                <option value="inosuke">Inosuke</option>
-                <option value="tomioka">Tomioka</option>
-                <option value="shinobu">Shinobu</option>
-                <option value="uzui">Uzui</option>
-                <option value="rengoku">Rengoku</option>
-                <option value="mitsuri">Mitsuri</option>
-                <option value="iguro">Iguro Obanai</option>
-                <option value="sanemi">Sanemi</option>
-                <option value="tokito">Tokito</option>
-                <option value="gyomei">Gyomei</option>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
 
-            </select>
-    
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-    
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/3o4yvpltpPs?si=wxcsf_CzicyTOOxj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </main>
