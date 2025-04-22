@@ -173,3 +173,24 @@ header a {
     text-align: center;
     text-decoration: double;
 }
+ 
+.centrar-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Ajustable según diseño */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+form {
+  background: rgb(0, 0, 0);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
