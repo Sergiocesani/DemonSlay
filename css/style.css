@@ -185,13 +185,13 @@ header a {
 
 form {
   background: rgb(0, 0, 0);
-  padding: 3rem;
-  border-radius: 1rem;
+  padding: 10px;
+  border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: #e37171;
+  border: 1px solid #e37171;
 }
