@@ -86,6 +86,9 @@ h2 {
   
   /* === RESPONSIVE: en pantallas pequeñas, que el aside baje debajo === */
   @media (max-width: 768px) {
+    nav {
+      
+    }
     .grid-layout {
       grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
     }
@@ -94,6 +97,7 @@ h2 {
       margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
     }
   }
+
   
 
 /* === LAYOUT HEADER / NAV === */
