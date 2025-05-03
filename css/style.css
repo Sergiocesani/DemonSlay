@@ -1,183 +1,230 @@
 /* === RESET / BASE === */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Estilos generales del body */
 body {
-    font-family: "Poppins", sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: black;
-    color: antiquewhite;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: antiquewhite;
 }
-
 
 /* Estilo para todas las imágenes */
 img {
-    order: 2; /* para poner el logo a la derecha si está dentro de un flex */
-    width: 200px;
-    border-radius: 20px;
+  order: 2; /* para poner el logo a la derecha si está dentro de un flex */
+  width: 200px;
+  border-radius: 20px;
 }
 
 /* === TIPOGRAFÍA GENERAL === */
 p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    line-height: 1.5;
-    font-style: normal;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  line-height: 1.5;
+  font-style: normal;
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif;
+  font-family: 'Georgia', serif;
 }
 
 h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
-/* === LAYOUT PRINCIPAL CON GRID (main + aside) === */
-.grid-layout {
-    display: grid; /* Activamos Grid para el contenedor */
-    grid-template-columns: 3fr 1fr; /* 2 columnas: 3 partes para el contenido, 1 para el aside */
-    gap: 20px; /* Espacio entre las columnas */
-    padding: 20px; /* Espacio interno alrededor del contenido */
-  }
-  
-  /* Estilo para la sección de info principal */
-  .info {
-    display: flex; /* Usamos Flex para apilar los elementos uno debajo del otro */
-    flex-direction: column; /* Dirección vertical */
-    gap: 20px; 
-  }
-  
-  /* === ESTILO PARA LA BARRA LATERAL (ASIDE) === */
-  aside {
-    background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
-    padding: 20px; 
-    border: 2px solid #8b5d5d; 
-    border-radius: 10px; 
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Sombra clara para destacar el aside */
-    color: antiquewhite; 
-  }
-  
-  aside h3 {
-    font-size: 1.4em; 
-    color: #e6a1a1; 
-    margin-bottom: 15px; /* Espacio debajo del título */
-    border-bottom: 2px solid #8b5d5d; /* Línea inferior decorativa */
-    padding-bottom: 5px; /* Espacio entre el texto y la línea */
-  }
-  
-  /* Estilo para la lista ordenada */
-  aside ol {
-    padding-left: 20px; /* Sangría para que las viñetas no estén pegadas al borde */
-  }
-  
-  /* Estilo para cada ítem de la lista */
-  aside li {
-    margin-bottom: 15px; /* Espacio entre cada curiosidad */
-  }
-  
-  /* Estilo para los textos en negrita dentro de la lista */
-  aside li strong {
-    color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
-  }
-  
-  /* === RESPONSIVE: en pantallas pequeñas, que el aside baje debajo === */
-  @media (max-width: 768px) {
-    nav {
-      
-    }
-    .grid-layout {
-      grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
-    }
-  
-    aside {
-      margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
-    }
-  }
-
-  
 
 /* === LAYOUT HEADER / NAV === */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap; /* <- esto permite que el nav baje */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #000000;
 }
 
 nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 26px;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color:#e37171;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 30px;
+  background-color: #e37171;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header a {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 800;
 }
 
-/* COMPONENTES REUTILIZABLES  */
+
+/* index con grid */
+.contenedor-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.contenedor-grid {
+display: grid;
+grid-template-areas: 
+"titulo titulo titulo"
+"imagen1 texto1 texto1"
+"imagen2 texto2 texto2"
+"texto3 texto3 imagen3";
+
+grid-template-columns: 25% 40% 25%;
+grid-template-rows: 100px 250px 280px 250px;
+gap: 20px;
+padding: 20px;
+}
+
+.grid-titulo-1 {
+  grid-area: titulo;
+}
+.grid-texto-1 {
+  grid-area: texto1;
+}
+.grid-img-1 {
+  grid-area: imagen1;
+}
+
+.grid-texto-2{
+  grid-area: texto2;
+}
+.grid-img-2 {
+  grid-area: imagen2;
+}
+.grid-texto-3 {
+  grid-area: texto3;
+}
+.grid-img-3 {
+  grid-area: imagen3;
+}
+
+/* === COMPONENTES REUTILIZABLES === */
 
 /* Estilo para los párrafos con clase .parrafo1 */
 .parrafo1 {
-    font-size: 20px; /* Aumenta el tamaño del texto */
-    color: #ffffff; /* Color de la letra */
-    line-height: 1.6; /* Espaciado entre renglones */
-    margin-bottom: 20px; /* Espacio entre párrafos */
-    text-align: justify; /* Alinea el texto justificado */
+  font-size: 20px; /* Aumenta el tamaño del texto */
+  color: #ffffff; /* Color de la letra */
+  line-height: 1.6; /* Espaciado entre renglones */
+  margin-bottom: 20px; /* Espacio entre párrafos */
+  text-align: justify; /* Alinea el texto justificado */
 }
 
-/* Lista con viñetas personalizada */
+/* Lista con viñetas personalizadas */
 .viñeta {
-    list-style: circle;
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  list-style: circle;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 /* Galería de imágenes con Grid */
 .imagenes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+  padding: 50px;
 }
+
+/* === ESTILO PARA LA BARRA LATERAL (ASIDE) === */
+/* === LAYOUT PRINCIPAL CON GRID (main + aside) === */
+.grid-layout {
+  display: grid; /* Activamos Grid para el contenedor */
+  grid-template-columns: 3fr 1fr; /* 2 columnas: 3 partes para el contenido, 1 para el aside */
+  gap: 20px; /* Espacio entre las columnas */
+  padding: 20px; /* Espacio interno alrededor del contenido */
+}
+
+/* Estilo para la sección de info principal */
+.info {
+  display: flex; /* Usamos Flex para apilar los elementos uno debajo del otro */
+  flex-direction: column; /* Dirección vertical */
+  gap: 20px; 
+}
+
+/* === ESTILO PARA LA BARRA LATERAL (ASIDE) === */
+aside {
+  background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
+  padding: 20px; 
+  border: 2px solid #8b5d5d; 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Sombra clara para destacar el aside */
+  color: antiquewhite; 
+}
+
+aside h3 {
+  font-size: 1.4em; 
+  color: #e6a1a1; 
+  margin-bottom: 15px; /* Espacio debajo del título */
+  border-bottom: 2px solid #8b5d5d; /* Línea inferior decorativa */
+  padding-bottom: 5px; /* Espacio entre el texto y la línea */
+}
+
+/* Estilo para la lista ordenada */
+aside ol {
+  padding-left: 20px; /* Sangría para que las viñetas no estén pegadas al borde */
+}
+
+/* Estilo para cada ítem de la lista */
+aside li {
+  margin-bottom: 15px; /* Espacio entre cada curiosidad */
+}
+
+/* Estilo para los textos en negrita dentro de la lista */
+aside li strong {
+  color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
+}
+
+footer {
+  display: flex;
+  justify-content: center; /* Para centrar contenido si es necesario */
+  align-items: center; /* Para centrar verticalmente el contenido */
+  width: 100%;
+  padding: 50px;
+  margin-top: auto; /* Empuja el footer hacia el fondo */
+}
+
 
 /* Estilo para las imágenes dentro del grid */
 .imagenes-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px; /* opcional: bordes redondeados */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* opcional: bordes redondeados */
 }
 
-/* SECCIONES ESPECÍFICAS */
+/* === SECCIONES ESPECÍFICAS === */
 
 /* Banner superior con imagen de fondo */
 .banner {
-    background-image: url(../images/banner.jpg);
-    height: 200px;
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
-    color: antiquewhite;
-    text-align: center;
+  background-image: url(../images/banner.jpg);
+  height: 200px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
+  color: antiquewhite;
+  text-align: center;
 }
 
 /* Sección de introducción con centrado de texto */
 .introduccion {
-    text-align: center;
-    text-decoration: double;
+  text-align: center;
+  text-decoration: double;
 }
- 
+
 .centrar-formulario {
   display: flex;
   justify-content: center;
@@ -198,4 +245,75 @@ form {
   flex-direction: column;
   gap: 1rem;
   border: 1px solid #e37171;
+}
+/* Estilos base (para pantallas grandes) */
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 30px;
+  background-color: #e37171;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-wrap: nowrap;
+}
+
+
+
+/* === RESPONSIVE: en pantallas pequeñas, que el aside baje debajo === */
+@media (max-width: 768px) {
+  
+  .grid-layout {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
+  }
+
+  aside {
+    margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 468px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+  }    
+}
+
+@media (max-width: 468px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  header img {
+      order: 0;
+      width: 120px; /* más chico para móvil */
+  }
+}
+
+@media (max-width: 468px) {
+  .contenedor-grid {
+      grid-template-areas: 
+          "titulo"
+          "imagen1"
+          "texto1"
+          "imagen2"
+          "texto2"
+          "texto3"
+          "imagen3";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+  }
+  .banner {
+      background-image: none;
+      justify-content: left;
+      justify-items: left;
+      align-items: flex-start;
+  }
 }
