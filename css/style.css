@@ -262,81 +262,95 @@ nav ul {
 
 
 
-/* === RESPONSIVE: en pantallas pequeñas, que el aside baje debajo === */
-@media (max-width: 768px) {
-  
-  .grid-layout {
-    grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
+@media (max-width: 480px) {
+  /* Eliminar scroll lateral general */
+  body {
+    overflow-x: hidden;
   }
 
-  aside {
-    margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
-  }
-}
-
-/* Estilos para pantallas pequeñas */
-/* ==== MEDIA QUERY: Hasta 768px ==== */
-
-@media (max-width: 768px) {
-  .contenido-principal {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  h1.banner {
-    font-size: 1.8rem;
-  }
-
-  .contenedor-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .contenedor-grid p {
-    font-size: 0.95rem;
-  }
-
-  aside {
-    order: 2;
-    margin-top: 20px;
-  }
-}
-
-/* ==== MEDIA QUERY: Hasta 468px ==== */
-
-@media (max-width: 468px) {
+  /* Header y navegación */
   header {
-    padding: 8px;
-  }
-
-  nav ul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
-  h1.banner {
-    font-size: 1.5rem;
-    padding: 0 10px;
+  header img {
+    width: 100px;
   }
 
-  .parrafo1 {
-    font-size: 0.9rem;
-    padding: 0 10px;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    width: 100%;
   }
 
-  aside {
+  /* Grid de index */
+  .contenedor-grid {
+    display: grid;
+    grid-template-areas: 
+      "titulo"
+      "imagen1"
+      "texto1"
+      "imagen2"
+      "texto2"
+      "texto3"
+      "imagen3";
+    grid-template-columns: 1fr;
     padding: 10px;
-    font-size: 0.9rem;
+    gap: 15px;
   }
 
   .contenedor-grid img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Galería de imágenes */
+  .imagenes-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  /* Grid layout (main + aside) */
+  .grid-layout {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  aside {
+    margin-top: 20px;
+  }
+
+  /* Ajuste para formulario */
+  .centrar-formulario {
+    padding: 10px;
+    height: auto;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Banner: eliminamos fondo para evitar problemas de visualización */
+  .banner {
+    background: none;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Texto más chico para párrafos */
+  .parrafo1,
+  .viñeta {
+    font-size: 16px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2em;
+    text-align: center;
   }
 }
