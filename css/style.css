@@ -84,12 +84,19 @@ grid-template-areas:
 
 grid-template-columns: 25% 40% 25%;
 grid-template-rows: 100px 250px 280px 250px;
-gap: 20px;
+gap: 40px;
 padding: 20px;
 }
 
+
 .grid-titulo-1 {
   grid-area: titulo;
+}
+
+.grid-video {
+  grid-area: video;
+  width: 100%;
+  height: auto;
 }
 .grid-texto-1 {
   grid-area: texto1;
@@ -109,6 +116,13 @@ padding: 20px;
 }
 .grid-img-3 {
   grid-area: imagen3;
+}
+
+.video {
+  grid-area: video;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 /* === COMPONENTES REUTILIZABLES === */
@@ -187,13 +201,31 @@ aside li strong {
   color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
 }
 
-footer {
+.footer-columnas {
   display: flex;
-  justify-content: center; /* Para centrar contenido si es necesario */
-  align-items: center; /* Para centrar verticalmente el contenido */
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 6px;
+  background-color: #101010;
+  color: #e37171;
+  flex-wrap: wrap;
+}
+
+.columna {
+  flex: 1;
+  min-width: 100px;
+  margin: 10px;
+  color: #e37171;
+}
+.columna a {
+  color: #e37171;
+  text-decoration: none;
+}
+
+.footer-columnas .copyright {
   width: 100%;
-  padding: 50px;
-  margin-top: auto; /* Empuja el footer hacia el fondo */
+  text-align: center;
+  margin-top: 20px;
 }
 
 
@@ -217,6 +249,14 @@ footer {
   text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
   color: antiquewhite;
   text-align: center;
+  opacity: 0;
+  animation: myAnimation 2s infinite;
+  animation-duration: 10s repeat; 
+}
+
+@keyframes myAnimation {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
 }
 
 /* Sección de introducción con centrado de texto */
@@ -246,111 +286,107 @@ form {
   gap: 1rem;
   border: 1px solid #e37171;
 }
-/* Estilos base (para pantallas grandes) */
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 12px 30px;
-  background-color: #e37171;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex-wrap: nowrap;
-}
 
 
 
-@media (max-width: 480px) {
-  /* Eliminar scroll lateral general */
-  body {
-    overflow-x: hidden;
-  }
+/* === RESPONSIVE === */
 
-  /* Header y navegación */
+@media (max-width: 468px) {
   header {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 20px;
   }
-
   header img {
-    width: 100px;
+      width: 150px;
   }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    width: 100%;
+  nav {
+      width: 100%;
   }
-
-  /* Grid de index */
+  header ul {
+      margin-left: 20px
+  }
+  ;
+  .banner { 
+      background-image: url(../images/banner.jpg);
+      justify-content: center;
+      justify-items: center;
+      align-items: flex-start;
+  }
   .contenedor-grid {
-    display: grid;
-    grid-template-areas: 
-      "titulo"
-      "imagen1"
-      "texto1"
-      "imagen2"
-      "texto2"
-      "texto3"
-      "imagen3";
-    grid-template-columns: 1fr;
-    padding: 10px;
-    gap: 15px;
+      grid-template-areas:
+        "titulo titulo"
+        "texto1 texto1"
+        "imagen1 imagen1"
+        "texto2 texto2"
+        "imagen2 imagen2"
+        "texto3 texto3"
+        "imagen3 imagen3";
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100px 100px;
+      gap: 20px;
+    }
+  
+    .video {
+      margin-top: 20px; /* separa el video del título */
+    }
+  }
+ 
+
+@media (max-width: 768px) {
+  nav { 
+      width: 100%;
+  }
+  nav ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+  }
+  .banner { 
+      background-image: url(../images/banner.jpg);
+      justify-content: center;
+      justify-items: center;
+      align-items: flex-start;
+  }
+  iframe {
+      flex-direction: column;
+      width: 100%;
   }
 
-  .contenedor-grid img {
-    width: 100%;
-    height: auto;
-  }
+  .contenedor-grid {
+      grid-template-areas:
+        "titulo titulo"
+        "texto1 texto1"
+        "imagen1 imagen1"
+        "texto2 texto2"
+        "imagen2 imagen2"
+        "texto3 texto3"
+        "imagen3 imagen3";
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100px 100px;
+      gap: 20px;
+    }
 
-  /* Galería de imágenes */
-  .imagenes-grid {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  /* Grid layout (main + aside) */
   .grid-layout {
-    grid-template-columns: 1fr;
-    padding: 10px;
+    grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
   }
 
   aside {
-    margin-top: 20px;
+    margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
   }
-
-  /* Ajuste para formulario */
-  .centrar-formulario {
-    padding: 10px;
-    height: auto;
+  .trama {
+      margin: 10px;
+      padding: 40px;
+      font-family: "Poppins", sans-serif;
   }
-
-  form {
-    width: 100%;
-    padding: 15px;
-  }
-
-  /* Banner: eliminamos fondo para evitar problemas de visualización */
-  .banner {
-    background: none;
-    height: auto;
-    text-align: center;
-    padding: 20px;
-  }
-
-  /* Texto más chico para párrafos */
-  .parrafo1,
   .viñeta {
-    font-size: 16px;
+      margin: 10px;
+      padding: 40px;
+      font-family: "Poppins", sans-serif;;
   }
-
-  h1, h2, h3 {
-    font-size: 1.2em;
-    text-align: center;
+  .subtitul {
+      font-size: 30px;
   }
 }
