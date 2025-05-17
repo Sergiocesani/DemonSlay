@@ -1,77 +1,74 @@
 /* === RESET / BASE === */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Estilos generales del body */
 body {
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0;
-  background-color: black;
-  color: antiquewhite;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: antiquewhite;
 }
 
 /* Estilo para todas las imágenes */
 img {
-  order: 2; /* para poner el logo a la derecha si está dentro de un flex */
-  width: 200px;
-  border-radius: 20px;
+    order: 2; /* para poner el logo a la derecha si está dentro de un flex */
+    width: 200px;
+    border-radius: 20px;
 }
 
-/* === TIPOGRAFÍA GENERAL === */
 p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  line-height: 1.5;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
 }
 
 h1, h2, h3 {
-  font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif;
 }
 
 h2 {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* === LAYOUT HEADER / NAV === */
 header {
-  display: flex;
-  flex-wrap: wrap; /* <- esto permite que el nav baje */
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  background-color: #000000;
+    display: flex;
+    flex-wrap: wrap; /* <- esto permite que el nav baje */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #000000;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 12px 30px;
-  background-color: #e37171;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 12px 30px;
+    background-color: #e37171;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 800;
 }
 
 
-/* index con grid */
 .contenedor-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 .contenedor-grid {
@@ -90,303 +87,311 @@ padding: 20px;
 
 
 .grid-titulo-1 {
-  grid-area: titulo;
+    grid-area: titulo;
 }
 
 .grid-video {
-  grid-area: video;
-  width: 100%;
-  height: auto;
+    grid-area: video;
+    width: 100%;
+    height: auto;
 }
 .grid-texto-1 {
-  grid-area: texto1;
+    grid-area: texto1;
 }
 .grid-img-1 {
-  grid-area: imagen1;
+    grid-area: imagen1;
 }
 
 .grid-texto-2{
-  grid-area: texto2;
+    grid-area: texto2;
 }
 .grid-img-2 {
-  grid-area: imagen2;
+    grid-area: imagen2;
 }
 .grid-texto-3 {
-  grid-area: texto3;
+    grid-area: texto3;
 }
 .grid-img-3 {
-  grid-area: imagen3;
+    grid-area: imagen3;
 }
 
 .video {
-  grid-area: video;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
+    grid-area: video;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
 
-/* === COMPONENTES REUTILIZABLES === */
 
 /* Estilo para los párrafos con clase .parrafo1 */
 .parrafo1 {
-  font-size: 20px; /* Aumenta el tamaño del texto */
-  color: #ffffff; /* Color de la letra */
-  line-height: 1.6; /* Espaciado entre renglones */
-  margin-bottom: 20px; /* Espacio entre párrafos */
-  text-align: justify; /* Alinea el texto justificado */
+    font-size: 20px; /* Aumenta el tamaño del texto */
+    color: #ffffff; /* Color de la letra */
+    line-height: 1.6; /* Espaciado entre renglones */
+    margin-bottom: 20px; /* Espacio entre párrafos */
+    text-align: justify; /* Alinea el texto justificado */
 }
 
-/* Lista con viñetas personalizadas */
 .viñeta {
-  list-style: circle;
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+    list-style: circle;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* Galería de imágenes con Grid */
 .imagenes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
-  padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 10px;
+    padding: 50px;
 }
 
-/* === ESTILO PARA LA BARRA LATERAL (ASIDE) === */
-/* === LAYOUT PRINCIPAL CON GRID (main + aside) === */
 .grid-layout {
-  display: grid; /* Activamos Grid para el contenedor */
-  grid-template-columns: 3fr 1fr; /* 2 columnas: 3 partes para el contenido, 1 para el aside */
-  gap: 20px; /* Espacio entre las columnas */
-  padding: 20px; /* Espacio interno alrededor del contenido */
-}
+    display: grid; /* Activamos Grid  */
+    grid-template-columns: 3fr 1fr; /* 2 columnas: 3 partes para el contenido, 1 para el aside */
+    gap: 20px; /* Espacio entre las columnas */
+    padding: 20px; /* Espacio interno alrededor del contenido */
+  }
+  
+  
+  .info {
+    display: flex; /* Usé Flex para apilar los elementos uno debajo del otro */
+    flex-direction: column; /* Dirección vertical */
+    gap: 20px; 
+  }
+  
+  
+  aside {
+    background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
+    padding: 20px; 
+    border: 2px solid #8b5d5d; 
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Sombra clara para destacar el aside */
+    color: antiquewhite; 
+  }
+  
+  aside h3 {
+    font-size: 1.4em; 
+    color: #e6a1a1; 
+    margin-bottom: 15px; /* Espacio debajo del título */
+    border-bottom: 2px solid #8b5d5d; 
+    padding-bottom: 5px; /* Espacio entre el texto y la línea */
+  }
+  
+  
+  aside ol {
+    padding-left: 20px; /* Sangría para que las viñetas no estén pegadas al borde */
+  }
+  
+ 
+  aside li {
+    margin-bottom: 15px; /* Espacio entre cada curiosidad */
+  }
+  
 
-/* Estilo para la sección de info principal */
-.info {
-  display: flex; /* Usamos Flex para apilar los elementos uno debajo del otro */
-  flex-direction: column; /* Dirección vertical */
-  gap: 20px; 
-}
+  aside li strong {
+    color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
+  }
 
-/* === ESTILO PARA LA BARRA LATERAL (ASIDE) === */
-aside {
-  background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
-  padding: 20px; 
-  border: 2px solid #8b5d5d; 
-  border-radius: 10px; 
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Sombra clara para destacar el aside */
-  color: antiquewhite; 
-}
-
-aside h3 {
-  font-size: 1.4em; 
-  color: #e6a1a1; 
-  margin-bottom: 15px; /* Espacio debajo del título */
-  border-bottom: 2px solid #8b5d5d; /* Línea inferior decorativa */
-  padding-bottom: 5px; /* Espacio entre el texto y la línea */
-}
-
-/* Estilo para la lista ordenada */
-aside ol {
-  padding-left: 20px; /* Sangría para que las viñetas no estén pegadas al borde */
-}
-
-/* Estilo para cada ítem de la lista */
-aside li {
-  margin-bottom: 15px; /* Espacio entre cada curiosidad */
-}
-
-/* Estilo para los textos en negrita dentro de la lista */
-aside li strong {
-  color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
-}
-
-.footer-columnas {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  padding: 6px;
-  background-color: #101010;
-  color: #e37171;
-  flex-wrap: wrap;
-}
-
-.columna {
-  flex: 1;
-  min-width: 100px;
-  margin: 10px;
-  color: #e37171;
-}
-.columna a {
-  color: #e37171;
-  text-decoration: none;
-}
-
-.footer-columnas .copyright {
+.carousel-item img {
   width: 100%;
-  text-align: center;
-  margin-top: 20px;
+  height: 500px; 
+  object-fit: contain;
 }
 
+.elementos {
+  flex: 1 0 auto;
+  margin: 0 50px;
+  width: 500px;
+  height: 500px;
+}
+
+  .footer-columnas {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 6px;
+    background-color: #101010;
+    color: #e37171;
+    flex-wrap: wrap;
+  }
+  
+  .columna {
+    flex: 1;
+    min-width: 100px;
+    margin: 10px;
+    color: #e37171;
+  }
+  .columna a {
+    color: #e37171;
+    text-decoration: none;
+  }
+  
+  .footer-columnas .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
 
 /* Estilo para las imágenes dentro del grid */
 .imagenes-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px; /* opcional: bordes redondeados */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* opcional: bordes redondeados */
 }
 
-/* === SECCIONES ESPECÍFICAS === */
 
 /* Banner superior con imagen de fondo */
 .banner {
-  background-image: url(../images/banner.jpg);
-  height: 200px;
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
-  color: antiquewhite;
-  text-align: center;
-  opacity: 0;
-  animation: myAnimation 2s infinite;
-  animation-duration: 10s repeat; 
+    background-image: url(../images/banner.jpg);
+    height: 200px;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
+    color: antiquewhite;
+    text-align: center;
+    opacity: 0;
+    animation: myAnimation 2s infinite;
+    animation-duration: 10s repeat; 
 }
 
 @keyframes myAnimation {
-  0% { opacity: 0;}
-  100% { opacity: 1;}
+    0% { opacity: 0;}
+    100% { opacity: 1;}
 }
 
 /* Sección de introducción con centrado de texto */
 .introduccion {
-  text-align: center;
-  text-decoration: double;
+    text-align: center;
+    text-decoration: double;
 }
 
 .centrar-formulario {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh; /* Ajustable según diseño */
-  padding: 2rem;
-  box-sizing: border-box;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Ajustable según diseño */
+    padding: 2rem;
+    box-sizing: border-box;
+  }
 
-form {
-  background: rgb(0, 0, 0);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border: 1px solid #e37171;
-}
+  form {
+    background: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #e37171;
+  }
 
-
+  
 
 /* === RESPONSIVE === */
 
 @media (max-width: 468px) {
-  header {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      padding: 20px;
-  }
-  header img {
-      width: 150px;
-  }
-  nav {
-      width: 100%;
-  }
-  header ul {
-      margin-left: 20px
-  }
-  ;
-  .banner { 
-      background-image: url(../images/banner.jpg);
-      justify-content: center;
-      justify-items: center;
-      align-items: flex-start;
-  }
-  .contenedor-grid {
-      grid-template-areas:
-        "titulo titulo"
-        "texto1 texto1"
-        "imagen1 imagen1"
-        "texto2 texto2"
-        "imagen2 imagen2"
-        "texto3 texto3"
-        "imagen3 imagen3";
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 100px 100px;
-      gap: 20px;
+    header {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 20px;
     }
-  
-    .video {
-      margin-top: 20px; /* separa el video del título */
+    header img {
+        width: 150px;
     }
-  }
- 
+    nav {
+        width: 100%;
+    }
+    header ul {
+        margin-left: 20px
+    }
+    ;
+    .banner { 
+        background-image: url(../images/banner.jpg);
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-start;
+    }
+    .contenedor-grid {
+        grid-template-areas:
+          "titulo titulo"
+          "texto1 texto1"
+          "imagen1 imagen1"
+          "texto2 texto2"
+          "imagen2 imagen2"
+          "texto3 texto3"
+          "imagen3 imagen3";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px 100px;
+        gap: 20px;
+      }
+    
+      .video {
+        margin-top: 20px; /* separa el video del título */
+      }
+    }
+   
 
 @media (max-width: 768px) {
-  nav { 
-      width: 100%;
-  }
-  nav ul {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-  }
-  .banner { 
-      background-image: url(../images/banner.jpg);
-      justify-content: center;
-      justify-items: center;
-      align-items: flex-start;
-  }
-  iframe {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .contenedor-grid {
-      grid-template-areas:
-        "titulo titulo"
-        "texto1 texto1"
-        "imagen1 imagen1"
-        "texto2 texto2"
-        "imagen2 imagen2"
-        "texto3 texto3"
-        "imagen3 imagen3";
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 100px 100px;
-      gap: 20px;
+    nav { 
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+    .banner { 
+        background-image: url(../images/banner.jpg);
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-start;
+    }
+    iframe {
+        flex-direction: column;
+        width: 100%;
     }
 
-  .grid-layout {
-    grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
-  }
+    .contenedor-grid {
+        grid-template-areas:
+          "titulo titulo"
+          "texto1 texto1"
+          "imagen1 imagen1"
+          "texto2 texto2"
+          "imagen2 imagen2"
+          "texto3 texto3"
+          "imagen3 imagen3";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px 100px;
+        gap: 20px;
+      }
 
-  aside {
-    margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
+    .grid-layout {
+      grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
+    }
+  
+    aside {
+      margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
+    }
+    .trama {
+        margin: 10px;
+        padding: 40px;
+        font-family: "Poppins", sans-serif;
+    }
+    .viñeta {
+        margin: 10px;
+        padding: 40px;
+        font-family: "Poppins", sans-serif;;
+    }
+    .subtitul {
+        font-size: 30px;
+    }
   }
-  .trama {
-      margin: 10px;
-      padding: 40px;
-      font-family: "Poppins", sans-serif;
-  }
-  .viñeta {
-      margin: 10px;
-      padding: 40px;
-      font-family: "Poppins", sans-serif;;
-  }
-  .subtitul {
-      font-size: 30px;
-  }
-}
