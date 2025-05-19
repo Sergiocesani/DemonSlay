@@ -127,7 +127,7 @@ padding: 20px;
 .parrafo1 {
     font-size: 20px; /* Aumenta el tamaño del texto */
     color: #ffffff; /* Color de la letra */
-    line-height: 1.1; /* Espaciado entre renglones */
+    line-height: 1.6; /* Espaciado entre renglones */
     margin-bottom: 20px; /* Espacio entre párrafos */
     text-align: justify; /* Alinea el texto justificado */
     ;
@@ -250,7 +250,6 @@ padding: 20px;
   line-height: 20px;
 }
 
-
   .footer-columnas {
     display: flex;
     justify-content: space-evenly;
@@ -274,10 +273,7 @@ padding: 20px;
   }
   .columna a {
     color: #e37171;
-    text-decoration: none;
-  }
-
-  .columna ul li {
+    list-style: none;
     text-decoration: none;
   }
   
@@ -356,40 +352,46 @@ padding: 20px;
         align-items: center;
         padding: 20px;
     }
+
     header img {
         width: 150px;
     }
+
     nav {
         width: 100%;
     }
+
     header ul {
-        margin-left: 20px
+        margin-left: 20px;
     }
-    ;
+
     .banner { 
         background-image: url(../images/banner.jpg);
         justify-content: center;
         justify-items: center;
         align-items: flex-start;
     }
+
     .contenedor-grid {
         grid-template-areas:
-          "titulo titulo"
-          "texto1 texto1"
-          "imagen1 imagen1"
-          "texto2 texto2"
-          "imagen2 imagen2"
-          "texto3 texto3"
-          "imagen3 imagen3";
+            "titulo titulo"
+            "texto1 texto1"
+            "imagen1 imagen1"
+            "texto2 texto2"
+            "imagen2 imagen2"
+            "texto3 texto3"
+            "imagen3 imagen3";
         grid-template-columns: 50% 50%;
-        grid-template-rows: 100px 100px;
-        gap: 20px;
-      }
+        grid-auto-rows: auto;
+        gap: 10px;
+    }
+}
+
 
       .video {
         margin-top: 20px; /* separa el video del título */
       }
-}
+
       
 @media (max-width: 768px) {
     nav { 
@@ -422,8 +424,8 @@ padding: 20px;
           "texto3 texto3"
           "imagen3 imagen3";
         grid-template-columns: 50% 50%;
-        grid-template-rows: 100px 100px;
-        gap: 20px;
+        grid-template-rows: auto;
+        gap: 10px;
       }
 
     .grid-layout {
