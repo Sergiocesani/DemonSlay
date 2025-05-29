@@ -9,7 +9,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: black;
-    color: rgb(253, 241, 226);
+    color: rgb(253, 240, 223);
 }
 
 /* Estilo para todas las imágenes */
@@ -155,13 +155,7 @@ padding: 20px;
     padding: 20px; /* Espacio interno alrededor del contenido */
   }
   
-  
-  .info {
-    display: flex; /* Usé Flex para apilar los elementos uno debajo del otro */
-    flex-direction: column; /* Dirección vertical */
-    gap: 20px; 
-  }
-  
+
   
   aside {
     background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
@@ -201,12 +195,7 @@ padding: 20px;
   object-fit: contain;
 }
 
-.elementos {
-  flex: 1 0 auto;
-  margin: 0 50px;
-  width: 500px;
-  height: 500px;
-}
+
 
 /* Grid en pilares y cazadores*/
 

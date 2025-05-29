@@ -1,1 +1,36 @@
 @use "./variables" as*;
+
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  }
+
+  .card {
+  background-color: #000000;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 4px 10px  #f7caca;
+  transition: transform 0.2s ease;
+  }
+
+  .card img {
+  width: 100%;
+  height: auto;
+  display: block; 
+  }
+
+  .card h2 {
+  padding: 10px 12px 0;
+  font-size: 16px;
+  color: #f7caca;
+}
+
+.card p {
+  padding: 0 12px 12px;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 20px;
+}

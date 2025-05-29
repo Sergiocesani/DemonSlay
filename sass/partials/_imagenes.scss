@@ -1,1 +1,8 @@
 @use "./variables" as*;
+
+.imagenes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 10px;
+    padding: 50px;
+}

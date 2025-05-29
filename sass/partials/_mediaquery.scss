@@ -1,1 +1,116 @@
 @use "./variables" as*;
+
+@media (max-width: 468px) {
+    header {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 20px;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    header ul {
+        margin-left: 20px;
+    }
+
+    .banner { 
+        background-image: url(../images/banner.jpg);
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-start;
+    }
+
+    .contenedor-grid {
+        grid-template-areas:
+            "titulo titulo"
+            "texto1 texto1"
+            "imagen1 imagen1"
+            "texto2 texto2"
+            "imagen2 imagen2"
+            "texto3 texto3"
+            "imagen3 imagen3";
+        grid-template-columns: 50% 50%;
+        grid-auto-rows: auto;
+        gap: 10px;
+    }
+}
+
+
+      .video {
+        margin-top: 20px; /* separa el video del título */
+      }
+
+      
+@media (max-width: 768px) {
+    nav { 
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+    .banner { 
+        background-image: url(../images/banner.jpg);
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-start;
+    }
+    iframe {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contenedor-grid {
+        grid-template-areas:
+          "titulo titulo"
+          "texto1 texto1"
+          "imagen1 imagen1"
+          "texto2 texto2"
+          "imagen2 imagen2"
+          "texto3 texto3"
+          "imagen3 imagen3";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        gap: 10px;
+      }
+
+    .grid-layout {
+      grid-template-columns: 1fr; /* En pantallas pequeñas, solo una columna */
+    }
+  
+    aside {
+      margin-top: 20px; /* Espacio arriba del aside para separarlo del contenido */
+    }
+    .trama {
+        margin: 10px;
+        padding: 40px;
+        font-family: "Poppins", sans-serif;
+    }
+    .viñeta {
+        margin: 10px;
+        padding: 40px;
+        font-family: "Poppins", sans-serif;;
+    }
+    .subtitul {
+        font-size: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+   .card img {
+    max-height: 250px;
+    object-fit: contain;
+  }
+}
