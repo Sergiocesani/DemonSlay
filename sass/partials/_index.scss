@@ -1,217 +1,187 @@
-@use "./variables" as*;
+//  _index.scss
 
+@use "./variables" as vars;
+@use "./mixin" as*;
+
+// HEADER
 header {
-    display: flex;
-    flex-wrap: wrap; /* <- esto permite que el nav baje */
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #000000;
-}
+  @include flex-center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  background-color: vars.$color-bg;
 
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-weight: 800;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 12px 30px;
-    background-color: #e37171;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-img {
-    order: 2; /* para poner el logo a la derecha si está dentro de un flex */
+  // Logo (img) y NAV de manera responsiva
+  img {
+    order: 2;
     width: 200px;
-    border-radius: 20px;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: black;
-    color: rgb(253, 240, 223);
-}
-
-/* Banner superior con imagen de fondo */
-.banner {
-    background-image: url(../images/banner.jpg);
-    height: 200px;
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
-    color: antiquewhite;
-    text-align: center;
-    opacity: 0;
-    animation: myAnimation 2s infinite;
-    animation-duration: 10s repeat; 
-}
-
-@keyframes myAnimation {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
-
-h1, h2, h3 {
-    font-family: 'Georgia', serif;
-}
-
-h2 {
-    text-decoration: underline;
-}
-
-p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    line-height: 1.5;
-    font-style: normal;
-}
-
-.grid-layout {
-    display: grid; /* Activamos Grid  */
-    grid-template-columns: 3fr 1fr; /* 2 columnas: 3 partes para el contenido, 1 para el aside */
-    gap: 20px; /* Espacio entre las columnas */
-    padding: 20px; /* Espacio interno alrededor del contenido */
-  }
-
-.contenedor-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-
-.contenedor-grid {
-display: grid;
-grid-template-areas: 
-"titulo titulo titulo"
-"imagen1 texto1 texto1"
-"imagen2 texto2 texto2"
-"texto3 texto3 imagen3";
-
-grid-template-columns: 25% 40% 25%;
-grid-template-rows: 100px 250px 280px 250px;
-gap: 40px;
-padding: 20px;
-}
-
-
-.grid-titulo-1 {
-    grid-area: titulo;
-}
-
-.grid-video {
-    grid-area: video;
-    width: 100%;
-    height: auto;
-}
-.grid-texto-1 {
-    grid-area: texto1;
-}
-.grid-img-1 {
-    grid-area: imagen1;
-}
-
-.grid-texto-2{
-    grid-area: texto2;
-}
-.grid-img-2 {
-    grid-area: imagen2;
-}
-.grid-texto-3 {
-    grid-area: texto3;
-}
-.grid-img-3 {
-    grid-area: imagen3;
-}
-.video {
-    grid-area: video;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
-  .parrafo1 {
-    font-size: 20px; /* Aumenta el tamaño del texto */
-    color: #ffffff; /* Color de la letra */
-    line-height: 1.6; /* Espaciado entre renglones */
-    margin-bottom: 20px; /* Espacio entre párrafos */
-    text-align: justify; /* Alinea el texto justificado */
-    ;
-}
-
-aside {
-    background-color: #1c1c1c; /* Fondo oscuro que contrasta con el resto */
-    padding: 20px; 
-    border: 2px solid #8b5d5d; 
-    border-radius: 10px; 
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Sombra clara para destacar el aside */
-    color: antiquewhite; 
-  }
-  
-  aside h3 {
-    font-size: 1.4em; 
-    color: #e6a1a1; 
-    margin-bottom: 15px; /* Espacio debajo del título */
-    border-bottom: 2px solid #8b5d5d; 
-    padding-bottom: 5px; /* Espacio entre el texto y la línea */
-  }
-  
-  
-  aside ol {
-    padding-left: 20px; /* Sangría para que las viñetas no estén pegadas al borde */
-  }
-  
- 
-  aside li {
-    margin-bottom: 15px; /* Espacio entre cada curiosidad */
-  }
-  
-
-  aside li strong {
-    color: #f7caca; /* Color más claro para destacar los títulos de cada curiosidad */
-  }
-
-  .footer-columnas {
-    display: flex;
-    justify-content: space-evenly;
+    border-radius: vars.$border-radius;
     margin: 10px;
-    padding: 6px;
-    background-color: #101010;
-    color: #e37171;
-    flex-wrap: wrap;
   }
 
-  .footer-columnas ul {
-  list-style: none;
-  padding-left: 0;
+  nav {
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 12px 30px;
+      background-color: vars.$color-nav-bg;
+      border-radius: vars.$border-radius;
+      box-shadow: vars.$box-shadow-light;
+      font-family: vars.$font-nav;
+
+      li {
+        a {
+          color: vars.$color-nav-text;
+          text-decoration: none;
+          font-weight: 800;
+          @include transition(color, transform);
+
+          &:hover {
+            color: vars.$color-accent-light;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
 }
+
+// CONTENIDO PRINCIPAL / GRID‐LAYOUT
+.contenido-principal {
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+
+      // Video YouTube
+      .video {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+      }
+
+      // INTRODUCCIÓN
+      .Introduccion {
+        text-align: center;
+        text-decoration: double;
+        margin: 20px 0;
+      }
+
+      .parrafo1 {
+        font-size: 20px;
+        color: vars.$color-text;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      // GRID‐INTERNO DE LA SECCIÓN “Una nueva forma”
+      .contenedor-grid {
+        display: grid;
+        grid-template-areas:
+          "titulo titulo titulo"
+          "imagen1 texto1 texto1"
+          "imagen2 texto2 texto2"
+          "texto3 texto3 imagen3";
+        grid-template-columns: 25% 40% 25%;
+        grid-template-rows: 100px 250px 280px 250px;
+        gap: 40px;
+        padding: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .grid-titulo-1 { grid-area: titulo; }
+        .grid-texto-1  { grid-area: texto1; }
+        .grid-img-1    { grid-area: imagen1; }
+        .grid-texto-2  { grid-area: texto2; }
+        .grid-img-2    { grid-area: imagen2; }
+        .grid-texto-3  { grid-area: texto3; }
+        .grid-img-3    { grid-area: imagen3; }
+        }
+      }
+    }
+
+    // ASIDE (columna derecha)
+    aside {
+      background-color: vars.$color-aside-bg;
+      padding: 20px;
+      border: 2px solid vars.$color-aside-border;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      color: antiquewhite;
+
+      h3 {
+        font-size: 1.4em;
+        color: #e6a1a1;
+        margin-bottom: 15px;
+        border-bottom: 2px solid vars.$color-aside-border;
+        padding-bottom: 5px;
+      }
+
+      ol {
+        padding-left: 20px;
+
+        li {
+          margin-bottom: 15px;
+
+          strong {
+            color: vars.$color-accent-light;
+          }
+        }
+      }
+    }
   
+
+// FOOTER
+.footer-columnas {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 6px;
+  background-color: vars.$color-footer-bg;
+  color: vars.$color-nav-bg;
+  flex-wrap: wrap;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
   .columna {
     flex: 1;
     min-width: 100px;
     margin: 10px;
-    color: #e37171;
+    color: vars.$color-nav-bg;
+
+    a {
+      color: vars.$color-nav-bg;
+      text-decoration: none;
+      list-style: none;
+      @include transition(color);
+
+      &:hover {
+        color: vars.$color-accent-light;
+      }
+    }
   }
-  .columna a {
-    color: #e37171;
-    list-style: none;
-    text-decoration: none;
-  }
-  
-  .footer-columnas .copyright {
+
+  .copyright {
     width: 100%;
     text-align: center;
     margin-top: 20px;
   }
+}
+
+// KEYFRAMES PARA BANNER
+@keyframes fadeInBanner {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -1,28 +1,43 @@
-@use "./variables" as*;
+@use "./variables" as vars;
+@use "./mixin" as*;
 
-.introduccion {
-    text-align: center;
-    text-decoration: double;
-}
-
-.centrar-formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh; /* Ajustable según diseño */
+ .centrar-formulario {
+    @include flex-center;
+    height: 70vh;
     padding: 2rem;
     box-sizing: border-box;
-  }
+    form {
+      background: vars.$color-bg;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid vars.$color-nav-bg;
 
-  form {
-    background: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: 1px solid #e37171;
+      label {
+        font-size: 1em;
+      }
+
+      input, select, textarea, button {
+        font-family: vars.$font-primary;
+      }
+
+      button {
+        background-color: vars.$color-nav-bg;
+        color: vars.$color-nav-text;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: vars.$border-radius;
+        cursor: pointer;
+        @include transition(background-color);
+
+        &:hover {
+          background-color: vars.$color-accent-light;
+        }
+      }
+    }
   }

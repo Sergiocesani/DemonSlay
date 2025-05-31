@@ -1,8 +1,41 @@
-@use "./variables" as*;
+@use "./variables" as vars;
+@use "./mixin" as*;
 
-.viñeta {
+main.trama {
+  margin: 20px;
+  padding: 20px;
+  font-family: vars.$font-primary;
+   h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+
+  .parrafo1 {
+    font-size: 20px;
+    color: vars.$color-text;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: justify;
+  }
+
+  .subtitul {
+    font-size: 1.2em;
+    margin: 15px 0 5px;
+  }
+
+  .viñeta {
     list-style: circle;
     font-size: 20px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 20px auto;
+  }
 }
+
