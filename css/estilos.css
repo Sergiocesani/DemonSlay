@@ -1,14 +1,26 @@
 @charset "UTF-8";
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   overflow-x: hidden;
+  background-color: black;
+  color: white;
 }
 
-.banner {
-  background-image: url(../images/banner.jpg);
+.grid-container .card {
+  background-color: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px #f7caca;
+  transition: transform 0.3s ease;
+}
+
+.info .banner {
+  background-image: url("../images/banner.jpg");
   height: 200px;
   background-size: cover;
   background-position: top;
@@ -17,27 +29,27 @@ body {
   color: antiquewhite;
   text-align: center;
   opacity: 0;
-  animation: myAnimation 2s infinite;
-  animation-duration: 10s repeat;
+  animation: fadeInBanner 2s forwards;
 }
 
-@keyframes myAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.banner {
+  background-image: url("../images/banner.jpg");
+  height: 200px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
+  color: antiquewhite;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInBanner 2s forwards;
 }
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  background-color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   padding: 10px 0;
   background-color: #000000;
 }
@@ -45,9 +57,9 @@ header img {
   order: 2;
   width: 200px;
   border-radius: 12px;
+  margin: 10px;
 }
-
-nav ul {
+header nav ul {
   display: flex;
   justify-content: space-evenly;
   gap: 30px;
@@ -59,24 +71,15 @@ nav ul {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-nav ul li a {
+header nav ul li a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 800;
   transition: color, transform 0.3s ease;
 }
-nav ul li a:hover {
+header nav ul li a:hover {
   color: #f7caca;
   transform: scale(1.1);
-}
-
-/* Estilos generales del body */
-body {
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0;
-  background-color: black;
-  color: rgb(253, 240, 223);
 }
 
 .contenido-principal .grid-layout {
@@ -85,11 +88,12 @@ body {
   gap: 20px;
   padding: 20px;
 }
-.contenido-principal .grid-layout .video {
-  grid-area: "video";
+.contenido-principal .grid-layout iframe.video {
+  display: block;
   width: 100%;
   height: auto;
   max-width: 100%;
+  margin: 20px auto;
 }
 .contenido-principal .grid-layout .Introduccion {
   text-align: center;
@@ -100,7 +104,7 @@ body {
   font-size: 20px;
   color: rgb(253, 240, 223);
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: justify;
 }
 .contenido-principal .grid-layout .contenedor-grid {
@@ -110,6 +114,11 @@ body {
   grid-template-rows: 100px 250px 280px 250px;
   gap: 40px;
   padding: 20px;
+}
+.contenido-principal .grid-layout .contenedor-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .contenido-principal .grid-layout .contenedor-grid .grid-titulo-1 {
   grid-area: titulo;
@@ -131,12 +140,6 @@ body {
 }
 .contenido-principal .grid-layout .contenedor-grid .grid-img-3 {
   grid-area: imagen3;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 aside {
@@ -177,25 +180,35 @@ aside ol li strong {
   list-style: none;
   padding-left: 0;
 }
-
-.columna {
+.footer-columnas .columna {
   flex: 1;
   min-width: 100px;
   margin: 10px;
   color: #e37171;
 }
-.columna a {
+.footer-columnas .columna a {
   color: #e37171;
-  list-style: none;
   text-decoration: none;
+  list-style: none;
+  transition: color 0.3s ease;
 }
-
+.footer-columnas .columna a:hover {
+  color: #f7caca;
+}
 .footer-columnas .copyright {
   width: 100%;
   text-align: center;
   margin-top: 20px;
 }
 
+@keyframes fadeInBanner {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .imagenes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -256,45 +269,24 @@ main.trama iframe {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  padding: 10px;
 }
-
-.card {
-  background-color: #000000;
-  border-radius: 12px;
+.grid-container .card {
   width: 100%;
-  height: auto;
-  overflow: hidden;
-  box-shadow: 0 4px 10px #f7caca;
-  transition: transform 0.2s ease;
 }
-.card:hover {
+.grid-container .card:hover {
   transform: translateY(-5px);
 }
-.card img {
+.grid-container .card img {
   width: 100%;
   height: auto;
   display: block;
-}
-.card h2 {
-  padding: 10px 12px 0;
-  font-size: 16px;
-  color: #f7caca;
-  font-family: "Poppins", sans-serif;
-}
-.card p {
-  padding: 0 12px 12px;
-  font-size: 14px;
-  color: rgb(253, 240, 223);
-  line-height: 20px;
-  font-family: "Poppins", sans-serif;
 }
 
 .centrar-formulario {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  background-color: #000000;
   height: 70vh;
   padding: 2rem;
   box-sizing: border-box;
@@ -311,23 +303,136 @@ main.trama iframe {
   gap: 1rem;
   border: 1px solid #e37171;
 }
-.centrar-formulario form label {
-  font-size: 1em;
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px;
+  }
+  header img {
+    width: 150px;
+  }
+  header nav {
+    width: 100%;
+  }
+  header nav ul {
+    margin-left: 20px;
+  }
+  .banner {
+    background-image: url(../images/banner.jpg);
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+  }
+  .contenido-principal .grid-layout .contenedor-grid {
+    grid-template-areas: "titulo" "texto1" "imagen1" "texto2" "imagen2" "texto3" "imagen3";
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+  }
+  .contenido-principal .grid-layout .video,
+  .contenido-principal .grid-layout iframe.video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  .contenido-principal .grid-layout .parrafo1 {
+    font-size: 16px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    max-height: 250px;
+    object-fit: contain;
+  }
 }
-.centrar-formulario form input, .centrar-formulario form select, .centrar-formulario form textarea, .centrar-formulario form button {
-  font-family: "Poppins", sans-serif;
+.centrar-formulario {
+  padding: 1rem;
+  height: auto;
 }
-.centrar-formulario form button {
-  background-color: #e37171;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.centrar-formulario form {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  gap: 0.75rem;
 }
-.centrar-formulario form button:hover {
-  background-color: #f7caca;
+
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  .banner {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+  }
+  .contenido-principal .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .contenido-principal .grid-layout iframe.video {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  .contenido-principal .grid-layout .contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "texto1" "imagen1" "texto2" "imagen2" "texto3" "imagen3";
+    gap: 20px;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-titulo-1 {
+    grid-area: titulo;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-texto-1 {
+    grid-area: texto1;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-img-1 {
+    grid-area: imagen1;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-texto-2 {
+    grid-area: texto2;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-img-2 {
+    grid-area: imagen2;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-texto-3 {
+    grid-area: texto3;
+  }
+  .contenido-principal .grid-layout .contenedor-grid .grid-img-3 {
+    grid-area: imagen3;
+  }
+  .contenido-principal .grid-layout .contenedor-grid img {
+    width: 100%;
+    height: auto;
+  }
+  .contenido-principal .grid-layout .parrafo1 {
+    font-size: 16px;
+  }
+  aside {
+    margin-top: 20px;
+  }
+  .trama,
+  .viñeta {
+    margin: 10px;
+    padding: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+  .subtitul {
+    font-size: 30px;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */

@@ -18,26 +18,7 @@
       gap: 1rem;
       border: 1px solid vars.$color-nav-bg;
 
-      label {
-        font-size: 1em;
-      }
 
-      input, select, textarea, button {
-        font-family: vars.$font-primary;
-      }
-
-      button {
-        background-color: vars.$color-nav-bg;
-        color: vars.$color-nav-text;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: vars.$border-radius;
-        cursor: pointer;
-        @include transition(background-color);
-
-        &:hover {
-          background-color: vars.$color-accent-light;
-        }
-      }
+  
     }
   }
