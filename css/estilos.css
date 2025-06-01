@@ -3,58 +3,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
-  color: rgb(253, 240, 223);
-  overflow-x: hidden;
-}
-
-p {
-  font-weight: 100;
-  line-height: 1.5;
-  font-style: normal;
-}
-
-h1, h2, h3 {
-  font-family: "Georgia", serif;
-}
-
-h2 {
-  text-decoration: underline;
-}
-
-img {
-  order: 2;
-  width: 200px;
-  border-radius: 20px;
-  display: block;
-  max-width: 100%;
-}
-
-.grid-container .card {
-  background-color: #000000;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px #f7caca;
-  transition: transform 0.3s ease;
-}
-
-.info .banner {
-  background-image: url("../images/banner.jpg");
-  height: 200px;
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
-  color: antiquewhite;
-  text-align: center;
-  opacity: 0;
-  animation: fadeInBanner 2s forwards;
-}
-
 .banner {
   background-image: url("../images/banner.jpg");
   height: 200px;
