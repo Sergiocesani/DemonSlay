@@ -1,31 +1,19 @@
-@use "./variables" as vars;
-@use "./mixin" as*;
+.banner {
+    background-image: url(../images/banner.jpg);
+    height: 200px;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
+    color: antiquewhite;
+    text-align: center;
+    opacity: 0;
+    animation: myAnimation 2s infinite;
+    animation-duration: 10s repeat; 
+}
 
- .info {
-      // BANNER PRINCIPAL
-      .banner {
-        background-image: url('../images/banner.jpg');
-        height: 200px;
-        background-size: cover;
-        background-position: top;
-        background-repeat: no-repeat;
-        text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
-        color: antiquewhite;
-        text-align: center;
-        opacity: 0;
-        animation: fadeInBanner 2s forwards;
-      }
-    }
-
-    .banner { background-image: url('../images/banner.jpg');
-        height: 200px;
-        background-size: cover;
-        background-position: top;
-        background-repeat: no-repeat;
-        text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
-        color: antiquewhite;
-        text-align: center;
-        opacity: 0;
-        animation: fadeInBanner 2s forwards;
-
-    }
+@keyframes myAnimation {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+    

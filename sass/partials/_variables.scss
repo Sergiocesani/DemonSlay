@@ -1,9 +1,4 @@
-// ==========================
-//  _variables.scss
-//  Definición de variables
-// ==========================
-
-// Paleta de colores
+// Colores
 $color-bg:              #000000;
 $color-text:            rgb(253, 240, 223);
 $color-nav-bg:          #e37171;
@@ -13,7 +8,7 @@ $color-aside-bg:        #1c1c1c;
 $color-aside-border:    #8b5d5d;
 $color-footer-bg:       #101010;
 
-// Tipografías
+// Fuentes
 $font-primary:          "Poppins", sans-serif;
 $font-secondary:        'Georgia', serif;
 $font-nav:              'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,6 +19,6 @@ $box-shadow-light:      0 4px 8px rgba(0, 0, 0, 0.2);
 $box-shadow-card:       0 4px 10px $color-accent-light;
 
 // Breakpoints (para media queries)
-$bp-small:              468px;
-$bp-medium:             768px;
-$bp-xsmall:             480px;
+$bp-small: 480px;
+$bp-medium:768px;
+$bp-xsmall: 468px;

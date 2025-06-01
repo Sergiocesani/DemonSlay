@@ -1,6 +1,4 @@
-//  _mixins.scss
-
-@use './variables' as vars;
+@use "./variables" as vars;
 
 // Mixin para transiciones suaves
 @mixin transition($props...) {
@@ -12,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
+  background-color: #000000
 }
 
 // Placeholder para estilos comunes en tarjetas (.card)
@@ -21,4 +21,27 @@
   overflow: hidden;
   box-shadow: vars.$box-shadow-card;
   @include transition(transform);
+}
+
+// _mixin.scss
+
+// Coincide con @media (max-width: 468px)
+@mixin media-small {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// Coincide con @media (max-width: 768px)
+@mixin media-medium {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// Coincide con @media (max-width: 480px)
+@mixin media-xsmall {
+  @media (max-width: 468px) {
+    @content;
+  }
 }

@@ -1,26 +1,23 @@
-//  _index.scss
-
 @use "./variables" as vars;
 @use "./mixin" as*;
 
-// HEADER
+//Header
 header {
-  @include flex-center;
-  flex-wrap: wrap;
+@include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 0;
   background-color: vars.$color-bg;
-
-  // Logo (img) y NAV de manera responsiva
-  img {
+img {
     order: 2;
     width: 200px;
     border-radius: vars.$border-radius;
-    margin: 10px;
-  }
-
-  nav {
+}
+}
+nav {
     ul {
-      display: flex;
+       display: flex;
       justify-content: space-evenly;
       gap: 30px;
       list-style: none;
@@ -30,7 +27,7 @@ header {
       border-radius: vars.$border-radius;
       box-shadow: vars.$box-shadow-light;
       font-family: vars.$font-nav;
-
+      
       li {
         a {
           color: vars.$color-nav-text;
@@ -41,30 +38,39 @@ header {
           &:hover {
             color: vars.$color-accent-light;
             transform: scale(1.1);
-          }
-        }
-      }
-    }
+      
+
+     }
+   }
   }
+ }
 }
+
+/* Estilos generales del body */
+body {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: rgb(253, 240, 223);
+}
+
 
 // CONTENIDO PRINCIPAL / GRID‐LAYOUT
 .contenido-principal {
   .grid-layout {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
-    padding: 20px;
-
-      // Video YouTube
-      .video {
-        margin-top: 20px;
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-      }
-
-      // INTRODUCCIÓN
+    display: grid; // Activamos grid
+    grid-template-columns: 3fr 1fr; // 2 columnas 3 partes para el contenido 1 para el aside
+    gap: 20px; //espacio entre las columnas
+    padding: 20px; //espacio interno alrededor del contenido
+    //Video 
+   .video {
+    grid-area: "video";
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    }
+    // INTRODUCCIÓN
       .Introduccion {
         text-align: center;
         text-decoration: double;
@@ -75,7 +81,7 @@ header {
         font-size: 20px;
         color: vars.$color-text;
         line-height: 1.6;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         text-align: justify;
       }
 
@@ -91,13 +97,6 @@ header {
         grid-template-rows: 100px 250px 280px 250px;
         gap: 40px;
         padding: 20px;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
         .grid-titulo-1 { grid-area: titulo; }
         .grid-texto-1  { grid-area: texto1; }
         .grid-img-1    { grid-area: imagen1; }
@@ -106,10 +105,14 @@ header {
         .grid-texto-3  { grid-area: texto3; }
         .grid-img-3    { grid-area: imagen3; }
         }
-      }
     }
-
-    // ASIDE (columna derecha)
+}
+img { 
+   width: 100%; 
+   height: 100%;
+   object-fit: cover;
+} 
+// ASIDE (columna derecha)
     aside {
       background-color: vars.$color-aside-bg;
       padding: 20px;
@@ -137,51 +140,36 @@ header {
           }
         }
       }
-    }
-  
-
-// FOOTER
+    } 
 .footer-columnas {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  padding: 6px;
-  background-color: vars.$color-footer-bg;
-  color: vars.$color-nav-bg;
-  flex-wrap: wrap;
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .columna {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 6px;
+    background-color: #101010;
+    color: #e37171;
+    flex-wrap: wrap;
+    
+    ul {
+  list-style: none;
+  padding-left: 0;
+}
+}
+.columna {
     flex: 1;
     min-width: 100px;
     margin: 10px;
-    color: vars.$color-nav-bg;
+    color: #e37171;
 
     a {
-      color: vars.$color-nav-bg;
-      text-decoration: none;
-      list-style: none;
-      @include transition(color);
-
-      &:hover {
-        color: vars.$color-accent-light;
-      }
-    }
+    color: #e37171;
+    list-style: none;
+    text-decoration: none;
   }
-
-  .copyright {
+}
+  
+  .footer-columnas .copyright {
     width: 100%;
     text-align: center;
     margin-top: 20px;
   }
-}
-
-// KEYFRAMES PARA BANNER
-@keyframes fadeInBanner {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
