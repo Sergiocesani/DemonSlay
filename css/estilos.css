@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.footer-columnas {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 6px;
+  background-color: #101010;
+  color: #e37171;
+  flex-wrap: wrap;
+}
+
 *,
 *::before,
 *::after {
@@ -85,15 +95,6 @@ h2 {
   line-height: 20px;
 }
 
-.footer-columnas {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  padding: 6px;
-  background-color: #101010;
-  color: #e37171;
-  flex-wrap: wrap;
-}
 .footer-columnas ul {
   list-style: none;
   padding-left: 0;
@@ -105,6 +106,7 @@ h2 {
   margin: 10px;
   color: #e37171;
 }
+
 .columna a {
   color: #e37171;
   text-decoration: none;

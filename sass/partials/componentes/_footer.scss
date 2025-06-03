@@ -1,33 +1,28 @@
 @use "../varimix/variables" as vars;
 @use "../varimix/mixin" as *;
-
+@use "../varimix/extend" as *;
 // === FOOTER ===
 
-.footer-columnas {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  padding: 6px;
-  background-color: #101010;
-  color: vars.$color-primario;
-  flex-wrap: wrap;
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
+.footer-columnas {
+  @extend %footer-base;
+}
+
+.footer-columnas ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 .columna {
   flex: 1;
   min-width: 100px;
   margin: 10px;
-  color: vars.$color-primario;
+  color: #e37171;
+}
 
-  a {
-    color: vars.$color-primario;
-    text-decoration: none;
-  }
+.columna a {
+  color: #e37171;
+  text-decoration: none;
 }
 
 .footer-columnas .copyright {

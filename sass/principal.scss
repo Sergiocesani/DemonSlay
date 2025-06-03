@@ -1,5 +1,6 @@
 @use "partials/varimix/variables" as vars;
 @use "partials/varimix/mixin" as *;
+@use "partials/varimix/extend" as *;
 @use "partials/base/reset";
 @use "partials/base/fuente.scss";
 
