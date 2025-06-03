@@ -1,0 +1,20 @@
+@use "partials/varimix/variables" as vars;
+@use "partials/varimix/mixin" as *;
+@use "partials/base/reset";
+@use "partials/base/fuente.scss";
+
+@use "partials/componentes/banner";
+@use "partials/componentes/cards";
+@use "partials/componentes/footer";
+@use "partials/componentes/form";
+
+@use "partials/layout/aside";
+@use "partials/layout/grid";
+@use "partials/layout/header";
+@use "partials/layout/nav";
+
+@use "partials/page/contacto";
+@use "partials/page/imagenes";
+@use "partials/page/index";
+@use "partials/page/pilaresycazadores";
+@use "partials/page/trama";

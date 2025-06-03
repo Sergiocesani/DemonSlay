@@ -1,0 +1,32 @@
+// layout/_aside.scss
+
+@use "../varimix/variables" as vars;
+
+aside {
+  background-color: vars.$color-aside-bg;
+  padding: vars.$padding-base;
+  border: 2px solid vars.$color-aside-border;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow-aside;
+  color: vars.$color-text;
+
+  h3 {
+    font-size: 1.4em;
+    color: vars.$color-primario;
+    margin-bottom: 15px;
+    border-bottom: 2px solid vars.$color-aside-border;
+    padding-bottom: 5px;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 15px;
+
+    strong {
+      color: vars.$color-secundario;
+    }
+  }
+}

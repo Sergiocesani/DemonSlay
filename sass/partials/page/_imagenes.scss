@@ -1,0 +1,40 @@
+// === _imagenes.scss ===
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+.imagenes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+  padding: 50px;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+
+
+.imagenes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+  padding: 50px;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+// RESPONSIVE
+@include media-mobile {
+  .imagenes-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,41 @@
+// === _nav.scss ===
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+
+nav {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 12px 30px;
+    background-color: vars.$color-primario;
+    border-radius: vars.$border-radius;
+    box-shadow: vars.$box-shadow-light;
+    font-family: vars.$font-nav;
+
+    li a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      font-weight: 800;
+
+      &:hover {
+        color: vars.$color-link-hover;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @include media-tablet {
+    width: 100%;
+
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+  }
+}

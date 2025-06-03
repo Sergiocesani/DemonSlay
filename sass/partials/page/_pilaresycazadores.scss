@@ -1,0 +1,60 @@
+// === _pilaresycazadores.scss ===
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #000000;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 4px 10px #f7caca;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  h2 {
+    padding: 10px 12px 0;
+    font-size: 16px;
+    color: #f7caca;
+  }
+
+  p {
+    padding: 0 12px 12px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 20px;
+  }
+}
+
+// === TABLET (768px) ===
+@include media-tablet {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// === MOBILE (480px) ===
+@include media-mobile {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    max-height: 250px;
+  }
+}

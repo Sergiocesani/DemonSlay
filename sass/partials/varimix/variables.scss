@@ -1,0 +1,34 @@
+// _variables.scss
+
+// COLORES
+$color-bg: #000000;
+$color-text: antiquewhite;
+$color-primario: #e37171;
+$color-secundario: #f7caca;
+$color-aside-bg: #1c1c1c;
+$color-aside-border: #8b5d5d;
+$color-link-hover: #f7caca;
+
+// FUENTES
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Georgia', serif;
+$font-nav: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// SOMBRAS
+$box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.2);
+$box-shadow-card: 0 4px 10px #f7caca;
+$box-shadow-aside: 0 0 10px rgba(255, 255, 255, 0.1);
+
+// BORDE 
+$border-radius: 12px;
+
+// BREAKPOINTS 
+$break-small: 468px;
+$break-medium: 768px;
+$break-large: 1024px; // por si hace falta
+$break-extra: 480px;
+
+// TAMAÑOS
+$ancho-max: 1200px;
+$padding-base: 20px;
+$gap-base: 20px;

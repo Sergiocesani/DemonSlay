@@ -1,0 +1,62 @@
+// === _contacto.scss ===
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+// Banner general
+.banner {
+  background-image: url(../images/banner.jpg);
+  height: 200px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
+  color: antiquewhite;
+  text-align: center;
+  opacity: 0;
+  animation: myAnimation 2s infinite;
+  animation-duration: 10s repeat;
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Formulario centrado
+
+.centrar-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+form {
+  background: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #e37171;
+}
+
+// === MEDIA QUERY: TABLET ===
+@include media-tablet {
+  .centrar-formulario {
+    padding: 1rem;
+    height: auto;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}

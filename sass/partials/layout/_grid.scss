@@ -1,0 +1,71 @@
+
+// === layout/_grid.scss ===
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+.grid-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+// === layout/_nav.scss ===
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 30px;
+  background-color: vars.$color-primario;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow-light;
+  font-family: vars.$font-nav;
+}
+
+nav a {
+  color: vars.$color-text;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 800;
+}
+
+
+// === layout/_aside.scss ===
+
+aside {
+  background-color: vars.$color-aside-bg;
+  padding: vars.$padding-base;
+  border: 2px solid vars.$color-aside-border;
+  border-radius: 10px;
+  box-shadow: vars.$box-shadow-aside;
+  color: vars.$color-text;
+}
+
+aside h3 {
+  font-size: 1.4em;
+  color: vars.$color-primario;
+  margin-bottom: 15px;
+  border-bottom: 2px solid vars.$color-aside-border;
+  padding-bottom: 5px;
+}
+
+aside ol {
+  padding-left: 20px;
+}
+
+aside li {
+  margin-bottom: 15px;
+}
+
+aside li strong {
+  color: vars.$color-secundario;
+}

@@ -1,0 +1,25 @@
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+// === FORMULARIO ===
+
+.centrar-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+form {
+  background: vars.$color-bg;
+  padding: 10px;
+  border-radius: vars.$border-radius;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid vars.$color-primario;
+}

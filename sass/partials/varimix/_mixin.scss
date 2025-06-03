@@ -1,0 +1,29 @@
+// === _mixin.scss ===
+
+// Centrado con Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Media query para 768px
+@mixin media-tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// Media query para 480px
+@mixin media-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// Media query para 468px (tu punto exacto que funcionaba bien)
+@mixin media-small {
+  @media (max-width: 468px) {
+    @content;
+  }
+}
