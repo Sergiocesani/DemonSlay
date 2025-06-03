@@ -1,0 +1,24 @@
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+.banner {
+  background-image: url("../images/banner.jpg");
+  height: 200px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-shadow: -1px 3px 11px rgba(0, 0, 0, 0.78);
+  color: antiquewhite;
+  text-align: center;
+  opacity: 0;
+  animation: myAnimation 2s infinite;
+  animation-duration: 10s repeat;
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

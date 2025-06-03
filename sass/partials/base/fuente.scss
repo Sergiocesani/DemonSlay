@@ -1,0 +1,23 @@
+@use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+
+body {
+  font-family: vars.$font-primary;
+  color: vars.$color-text;
+  background-color: vars.$color-bg;
+}
+
+p {
+  font-family: vars.$font-primary;
+  font-weight: 100;
+  line-height: 1.5;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: vars.$font-secondary;
+}
+
+h2 {
+  text-decoration: underline;
+}
