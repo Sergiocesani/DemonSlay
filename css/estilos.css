@@ -359,6 +359,16 @@ form {
   border-radius: 8px;
 }
 
+#carouselExample {
+  margin-top: 30px;
+}
+#carouselExample .carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .imagenes-grid {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
@@ -378,6 +388,10 @@ form {
     padding: 20px;
   }
 }
+#carouselExample .carousel-item img {
+  height: 250px;
+}
+
 body {
   background-color: #000000;
   color: antiquewhite;
@@ -391,6 +405,10 @@ body {
   grid-template-rows: 100px 250px 280px 250px;
   gap: 40px;
   padding: 20px;
+}
+.contenedor-grid div[data-aos] {
+  width: 100%;
+  height: 100%;
 }
 .contenedor-grid img {
   width: 100%;
