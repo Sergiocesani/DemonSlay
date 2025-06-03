@@ -1,7 +1,39 @@
-//  _index.scss
-
 @use "./variables" as vars;
-@use "./mixin" as*;
+@use "./mixin" as *;
+
+// RESET / BASE
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$font-primary;
+  padding: 0;
+  margin: 0;
+  background-color: vars.$color-bg;
+  color: vars.$color-text;
+
+  p {
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+    font-family: vars.$font-primary;
+  }
+
+  h1, h2, h3 {
+    font-family: vars.$font-secondary;
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+}
+
+img {
+  order: 2;
+  width: 200px;
+  border-radius: 20px;
+}
 
 // HEADER
 header {
@@ -10,7 +42,6 @@ header {
   padding: 10px 0;
   background-color: vars.$color-bg;
 
-  // Logo (img) y NAV de manera responsiva
   img {
     order: 2;
     width: 200px;
@@ -31,24 +62,17 @@ header {
       box-shadow: vars.$box-shadow-light;
       font-family: vars.$font-nav;
 
-      li {
-        a {
-          color: vars.$color-nav-text;
-          text-decoration: none;
-          font-weight: 800;
-          @include transition(color, transform);
-
-          &:hover {
-            color: vars.$color-accent-light;
-            transform: scale(1.1);
-          }
-        }
+      li a {
+        color: vars.$color-nav-text;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+        font-weight: 800;
       }
     }
   }
 }
 
-// CONTENIDO PRINCIPAL / GRID‐LAYOUT
+// MAIN
 .contenido-principal {
   .grid-layout {
     display: grid;
@@ -56,31 +80,38 @@ header {
     gap: 20px;
     padding: 20px;
 
-      // Video YouTube
-      iframe.video {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin: 20px auto;
-}
+    .info {
+      grid-column: 1 / 2;
+      width: 100%;
 
-      // INTRODUCCIÓN
-      .Introduccion {
+      .banner {
+        background-image: url(../images/banner.jpg);
+        height: 200px;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        text-shadow: -1px 3px 11px rgba(0,0,0,0.78);
+        color: antiquewhite;
         text-align: center;
-        text-decoration: double;
-        margin: 20px 0;
+        opacity: 0;
+        animation: myAnimation 10s infinite;
+      }
+
+      .video {
+        grid-area: video;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
       }
 
       .parrafo1 {
         font-size: 20px;
-        color: vars.$color-text;
+        color: #fff;
         line-height: 1.6;
         margin-bottom: 20px;
         text-align: justify;
       }
 
-      // GRID‐INTERNO DE LA SECCIÓN “Una nueva forma”
       .contenedor-grid {
         display: grid;
         grid-template-areas:
@@ -106,12 +137,14 @@ header {
         .grid-img-2    { grid-area: imagen2; }
         .grid-texto-3  { grid-area: texto3; }
         .grid-img-3    { grid-area: imagen3; }
-        }
       }
     }
 
-    // ASIDE (columna derecha)
     aside {
+      grid-column: 2 / 3;
+      max-width: 350px;
+      width: 100%;
+      justify-self: end;
       background-color: vars.$color-aside-bg;
       padding: 20px;
       border: 2px solid vars.$color-aside-border;
@@ -129,17 +162,18 @@ header {
 
       ol {
         padding-left: 20px;
+      }
 
-        li {
-          margin-bottom: 15px;
+      li {
+        margin-bottom: 15px;
 
-          strong {
-            color: vars.$color-accent-light;
-          }
+        strong {
+          color: vars.$color-accent-light;
         }
       }
     }
-  
+  }
+}
 
 // FOOTER
 .footer-columnas {
@@ -151,11 +185,6 @@ header {
   color: vars.$color-nav-bg;
   flex-wrap: wrap;
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
   .columna {
     flex: 1;
     min-width: 100px;
@@ -165,12 +194,6 @@ header {
     a {
       color: vars.$color-nav-bg;
       text-decoration: none;
-      list-style: none;
-      @include transition(color);
-
-      &:hover {
-        color: vars.$color-accent-light;
-      }
     }
   }
 
@@ -181,8 +204,8 @@ header {
   }
 }
 
-// KEYFRAMES PARA BANNER
-@keyframes fadeInBanner {
-  0%   { opacity: 0; }
+// ANIMACIÓN BANNER
+@keyframes myAnimation {
+  0% { opacity: 0; }
   100% { opacity: 1; }
 }
