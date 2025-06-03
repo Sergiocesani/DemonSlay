@@ -19,12 +19,15 @@
   margin-top: 30px;
 
   .carousel-item img {
-    width: 100%;
-    height: 400px; // podés ajustar esta altura como prefieras
-    object-fit: cover; // o `contain` si querés que se vea toda la imagen sin recorte
-    border-radius: 12px;
-  }
+  width: 100%;
+  height: auto; 
+  max-height: 400px; 
+  object-fit: cover; 
+  display: block;
+  margin: 0 auto;
 }
+  }
+
 
 
 .imagenes-grid {
