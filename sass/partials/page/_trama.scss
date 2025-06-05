@@ -1,5 +1,7 @@
 // === _trama.scss ===
 @use "../varimix/variables" as vars;
+@use "../varimix/mixin" as *;
+
 .trama {
   margin: 10px;
   padding: 40px;
@@ -17,4 +19,23 @@
 
 .subtitul {
   font-size: 30px;
+}
+
+@include media-tablet {
+  main.trama {
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .parrafo1, .viñeta {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    word-wrap: break-word;
+  }
 }
