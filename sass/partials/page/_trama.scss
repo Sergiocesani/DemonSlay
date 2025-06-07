@@ -1,12 +1,19 @@
 @use "../varimix/variables" as vars;
 @use "../varimix/mixin" as *;
 
+body, html {
+  overflow-x: hidden;
+}
+
 .linea-tiempo {
   padding: 50px 20px;
   background-color: vars.$color-bg;
   color: vars.$color-text;
   font-family: vars.$font-primary;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   h2 {
     text-align: center;
@@ -29,6 +36,8 @@
     position: relative;
     transition: all 0.3s ease-in-out;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 
     &:hover {
       box-shadow: 0 0 15px vars.$color-primario, 0 0 25px rgba(227, 113, 113, 0.5);
@@ -42,10 +51,12 @@
       border-radius: vars.$border-radius;
       box-shadow: 0 0 10px rgba(227, 113, 113, 0.4);
       flex-shrink: 0;
+      max-width: 100%;
     }
 
     .contenido {
       flex: 1;
+      max-width: 100%;
 
       h3 {
         font-size: 1.4rem;
@@ -62,7 +73,6 @@
     }
   }
 
-  // Media query intermedia (máx 950px)
   @media (max-width: vars.$breakpoint-intermedio) {
     .evento {
       flex-direction: column;
@@ -81,7 +91,6 @@
     }
   }
 
-  // Tablet (768px)
   @include media-tablet {
     .evento {
       flex-direction: column;
@@ -100,7 +109,7 @@
     }
   }
 
-  // Mobile (468px)
+
   @include media-small {
     .evento {
       flex-direction: column;
@@ -119,4 +128,3 @@
     }
   }
 }
-

@@ -641,12 +641,19 @@ body {
     max-height: 250px;
   }
 }
+body, html {
+  overflow-x: hidden;
+}
+
 .linea-tiempo {
   padding: 50px 20px;
   background-color: #000000;
   color: antiquewhite;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .linea-tiempo h2 {
   text-align: center;
@@ -668,6 +675,8 @@ body {
   position: relative;
   transition: all 0.3s ease-in-out;
   flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 .linea-tiempo .evento:hover {
   box-shadow: 0 0 15px #e37171, 0 0 25px rgba(227, 113, 113, 0.5);
@@ -680,9 +689,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(227, 113, 113, 0.4);
   flex-shrink: 0;
+  max-width: 100%;
 }
 .linea-tiempo .evento .contenido {
   flex: 1;
+  max-width: 100%;
 }
 .linea-tiempo .evento .contenido h3 {
   font-size: 1.4rem;
