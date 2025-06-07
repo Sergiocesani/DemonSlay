@@ -1,41 +1,122 @@
-// === _trama.scss ===
 @use "../varimix/variables" as vars;
 @use "../varimix/mixin" as *;
 
-.trama {
-  margin: 10px;
-  padding: 40px;
-  font-family: "Poppins", sans-serif;
-}
+.linea-tiempo {
+  padding: 50px 20px;
+  background-color: vars.$color-bg;
+  color: vars.$color-text;
+  font-family: vars.$font-primary;
+  overflow-x: hidden;
 
-.viñeta {
-  list-style: circle;
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  padding: 40px;
-  font-family: "Poppins", sans-serif;
-}
-
-.subtitul {
-  font-size: 30px;
-}
-
-@include media-tablet {
-  main.trama {
-    padding: 20px;
-    overflow-x: hidden;
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: vars.$color-primario;
+    font-family: vars.$font-secondary;
   }
 
-  iframe {
-    max-width: 100%;
-    height: auto;
+  .evento {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: vars.$padding-base;
+    border-left: 4px solid vars.$color-primario;
+    background-color: vars.$color-aside-bg;
+    border-radius: vars.$border-radius;
+    box-shadow: 0 0 10px #000;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    flex-wrap: wrap;
+
+    &:hover {
+      box-shadow: 0 0 15px vars.$color-primario, 0 0 25px rgba(227, 113, 113, 0.5);
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      object-fit: contain;
+      border-radius: vars.$border-radius;
+      box-shadow: 0 0 10px rgba(227, 113, 113, 0.4);
+      flex-shrink: 0;
+    }
+
+    .contenido {
+      flex: 1;
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: vars.$color-text;
+        font-family: vars.$font-secondary;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #ccc;
+      }
+    }
   }
 
-  .parrafo1, .viñeta {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: justify;
-    word-wrap: break-word;
+  // Media query intermedia (máx 950px)
+  @media (max-width: vars.$breakpoint-intermedio) {
+    .evento {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      .contenido {
+        text-align: center;
+      }
+    }
+  }
+
+  // Tablet (768px)
+  @include media-tablet {
+    .evento {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      .contenido {
+        text-align: center;
+      }
+    }
+  }
+
+  // Mobile (468px)
+  @include media-small {
+    .evento {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .contenido {
+        text-align: center;
+      }
+    }
   }
 }
+
