@@ -347,15 +347,48 @@ form {
 }
 .imagenes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
-  padding: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 30px;
+}
+.imagenes-grid div {
+  overflow: hidden;
 }
 .imagenes-grid img {
   width: 100%;
   height: auto;
+  max-height: 350px;
   object-fit: cover;
   border-radius: 8px;
+  border: 2px solid #f7caca;
+  transition: transform 0.3s ease;
+}
+.imagenes-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #f7caca;
+}
+
+.tren-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 30px;
+}
+.tren-grid div {
+  overflow: hidden;
+}
+.tren-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #e37171;
+  transition: transform 0.3s ease;
+}
+.tren-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #e37171;
 }
 
 #carouselExample {
@@ -381,19 +414,6 @@ form {
 #carouselExample .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
-}
-
-.imagenes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
-  padding: 50px;
-}
-.imagenes-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 @media (max-width: 480px) {

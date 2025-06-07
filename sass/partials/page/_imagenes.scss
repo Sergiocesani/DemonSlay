@@ -1,17 +1,56 @@
-// === _imagenes.scss ===
 @use "../varimix/variables" as vars;
 @use "../varimix/mixin" as *;
+
+
 .imagenes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
-  padding: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 30px;
+
+  div {
+    overflow: hidden;
+  }
 
   img {
     width: 100%;
     height: auto;
+    max-height: 350px;
     object-fit: cover;
     border-radius: 8px;
+    border: 2px solid vars.$color-secundario;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px vars.$color-secundario;
+    }
+  }
+}
+
+.tren-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 30px;
+
+  div {
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid vars.$color-primario;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px vars.$color-primario;
+    }
   }
 }
 
@@ -31,7 +70,7 @@
       width: 100%;
       max-height: 550px;
       height: auto;
-      object-fit: contain; // si querés ver la imagen completa sin recortes
+      object-fit: contain;
       display: block;
       margin: 0 auto;
     }
@@ -44,22 +83,6 @@
   }
 }
 
-
-.imagenes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 10px;
-  padding: 50px;
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
-
-// RESPONSIVE
 @include media-mobile {
   .imagenes-grid {
     grid-template-columns: 1fr;
