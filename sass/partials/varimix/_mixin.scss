@@ -21,9 +21,16 @@
   }
 }
 
-// Media query para 468px (tu punto exacto que funcionaba bien)
+// Media query para 468px
 @mixin media-small {
   @media (max-width: 468px) {
+    @content;
+  }
+}
+
+// Para el rango donde se vuelve a romper mi texto
+@mixin media-rango-intermedio {
+  @media (min-width: 768px) and (max-width: 904px) {
     @content;
   }
 }

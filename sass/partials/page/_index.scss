@@ -168,3 +168,48 @@ div[data-aos] {
     margin-top: 20px;
   }
 }
+@include media-rango-intermedio {
+  .contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "texto1"
+      "imagen1"
+      "texto2"
+      "imagen2"
+      "texto3"
+      "imagen3";
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .grid-texto-1,
+  .grid-texto-2,
+  .grid-texto-3 {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    width: 100%;
+  }
+
+  .grid-img-1,
+  .grid-img-2,
+  .grid-img-3 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  iframe.video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  aside {
+    width: 100%;
+    margin-top: 30px;
+    order: 3;
+  }
+}
