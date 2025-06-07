@@ -492,7 +492,7 @@ body {
 }
 
 .banner {
-  background-image: url(../);
+  background-image: url(../images/banner.jpg);
   height: 200px;
   background-size: cover;
   background-position: top;
