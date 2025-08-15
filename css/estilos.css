@@ -751,5 +751,47 @@ body, html {
     text-align: center;
   }
 }
+/* ====== MEMORIA (usar con <body class="memoria-page">) ====== */
+.memoria-page { background:#000; color:antiquewhite; min-height:100vh; font-family:'Poppins',sans-serif; }
+.memoria-page .topbar { padding:1rem; text-align:center; background:#0d0d0d; border-bottom:1px solid rgba(255,255,255,.06); }
+.memoria-page .topbar h1 { margin:0; font-size:clamp(1.1rem,2.5vw,1.6rem); }
+.memoria-page .container { max-width:1200px; margin:0 auto; padding:20px; }
+
+.memoria-page .hud { display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; justify-content:center; padding:.5rem 0 1rem; color:#f5e5c9; }
+.memoria-page .hud div { background:#0a0a0a; padding:.5rem .75rem; border-radius:12px; border:1px solid rgba(255,255,255,.06); box-shadow:0 4px 8px rgba(0,0,0,.2); }
+.memoria-page .btn { background:#e37171; color:#fff; border:none; border-radius:12px; padding:.6rem .9rem; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,.2); transition:transform .12s ease, filter .12s ease; }
+.memoria-page .btn:hover { filter:brightness(1.05); transform:translateY(-1px); }
+
+.memoria-page .grid { display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); margin-top:1rem; }
+
+.memoria-page .card { position:relative; width:100%; aspect-ratio:3/4; perspective:1000px; user-select:none; }
+.memoria-page .card .card-inner { position:absolute; inset:0; border-radius:12px; transform-style:preserve-3d; transition:transform .35s ease; box-shadow:0 4px 10px #f7caca, inset 0 0 0 1px rgba(255,255,255,.06); }
+.memoria-page .card.is-flipped .card-inner { transform:rotateY(180deg); }
+.memoria-page .card .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; overflow:hidden; }
+.memoria-page .card .front { display:flex; align-items:center; justify-content:center; background:#1c1c1c; font-size:2rem; }
+.memoria-page .card .back { transform:rotateY(180deg); background:#000; }
+.memoria-page .card .back img { width:100%; height:100%; object-fit:cover; }
+
+@media (max-width: 768px) {
+  .memoria-page .grid { grid-template-columns:repeat(auto-fit, minmax(90px, 1fr)); }
+}
+@media (max-width: 480px) {
+  .memoria-page .grid { grid-template-columns:repeat(auto-fit, minmax(75px, 1fr)); }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .memoria-page .grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .memoria-page .grid {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  }
+}
+
+
 
 /*# sourceMappingURL=estilos.css.map */

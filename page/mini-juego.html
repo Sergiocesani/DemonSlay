@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demon Slayer – Memoria</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body class="memoria-page">
+  <header class="topbar">
+    <h1>🀄 Mini juego de memoria — Demon Slayer</h1>
+    <img src="../images/logo.jpg" alt="logo">
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./imagenes.html">Imagenes</a></li>
+        <li><a href="./trama.html">Trama</a></li>
+        <li><a href="./pilaresycazadores.html">Pilares y Cazadores</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hud">
+      <div>⏱️ Tiempo: <span id="time">00:00</span></div>
+      <div>🌀 Movimientos: <span id="moves">0</span></div>
+      <div>🏆 Mejor tiempo: <span id="best">—</span></div>
+      <button id="reset" class="btn">Reiniciar</button>
+    </section>
+
+    <section id="grid" class="grid" aria-label="Tablero de memoria"></section>
+
+    <dialog id="winDialog" class="dialog">
+      <h2>¡Completaste el tablero! 🎉</h2>
+      <p>Tiempo: <strong id="finalTime"></strong></p>
+      <p>Movimientos: <strong id="finalMoves"></strong></p>
+      <div class="dialog-actions">
+        <button id="playAgain" class="btn">Jugar otra vez</button>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- memoria.js está en la raíz del proyecto -->
+  <script src="../memoria.js" defer></script>
+</body>
+</html>

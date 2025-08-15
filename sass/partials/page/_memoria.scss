@@ -1,0 +1,176 @@
+// /scss/pages/_memoria.scss
+@use "variables" as v;
+@use "mixin" as m;
+
+// Wrapper para aislar estilos de esta page
+.memoria-page {
+  // Fondo y tipografía de la página de memoria
+  background: v.$color-bg;
+  color: v.$color-text;
+  min-height: 100vh;
+
+  .topbar {
+    padding: 1rem;
+    text-align: center;
+    background: darken(v.$color-bg, 4%); // #0f0f0f aprox
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    h1 {
+      margin: 0;
+      font-family: v.$font-primary;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    }
+  }
+
+  .container {
+    max-width: v.$ancho-max;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  // HUD superior (tiempo, movimientos, mejor tiempo, botón reset)
+  .hud {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 0 1rem;
+    color: lighten(v.$color-text, 25%);
+
+    div {
+      background: lighten(v.$color-bg, 3%);
+      padding: .5rem .75rem;
+      border-radius: v.$border-radius;
+      border: 1px solid rgba(255,255,255,.06);
+      box-shadow: v.$box-shadow-light;
+      font-family: v.$font-primary;
+    }
+  }
+
+  .btn {
+    background: v.$color-primario;
+    color: #fff;
+    border: none;
+    border-radius: v.$border-radius;
+    padding: .6rem .9rem;
+    cursor: pointer;
+    box-shadow: v.$box-shadow-light;
+    transition: transform .12s ease, filter .12s ease;
+
+    &:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Grilla del tablero
+  .grid {
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    padding-bottom: 2rem;
+
+    @include m.media-tablet {
+      grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    }
+    @include m.media-mobile {
+      gap: .6rem;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+  }
+
+  // Tarjetas (flip 3D)
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    perspective: 1000px;
+    user-select: none;
+
+    .card-inner {
+      position: absolute;
+      inset: 0;
+      border-radius: v.$border-radius;
+      transform-style: preserve-3d;
+      transition: transform .35s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
+    }
+
+    &.is-flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: v.$border-radius;
+      overflow: hidden;
+
+      &.front {
+        display: grid;
+        place-items: center;
+        background: linear-gradient(145deg, lighten(v.$color-bg, 6%), lighten(v.$color-bg, 2%));
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: .5px;
+        font-size: 1rem;
+
+        .mark { opacity: .9; }
+      }
+
+      &.back {
+        transform: rotateY(180deg);
+        background: #000;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+
+    &.matched .card-inner {
+      // resalte verde suave usando sombra de tu set
+      box-shadow: 0 0 0 2px #2ecc71, 0 8px 18px rgba(0,0,0,.35);
+    }
+
+    &.locked {
+      pointer-events: none;
+      opacity: .6;
+    }
+  }
+
+  // Dialog (modal de victoria)
+  .dialog {
+    max-width: 420px;
+    border: none;
+    border-radius: v.$border-radius;
+    padding: 1rem 1.2rem;
+    background: lighten(v.$color-bg, 2%);
+    color: v.$color-text;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: v.$box-shadow-card;
+
+    &::backdrop {
+      background: rgba(0,0,0,.6);
+    }
+
+    h2 {
+      margin: .2rem 0 .6rem 0;
+      font-family: v.$font-primary;
+    }
+
+    .dialog-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: .6rem;
+    }
+  }
+}
